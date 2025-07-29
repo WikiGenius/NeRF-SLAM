@@ -68,7 +68,7 @@
 
 Clone repo with submodules:
 ```
-git clone https://github.com/ToniRV/NeRF-SLAM.git --recurse-submodules
+git clone https://github.com/WikiGenius/NeRF-SLAM.git --recurse-submodules
 git submodule update --init --recursive
 cd thirdparty/instant-ngp/ && git checkout feature/nerf_slam
 ```
@@ -104,9 +104,10 @@ cmake --build build_ngp --config RelWithDebInfo -j
 
 ### Compile gtsam and enable the python wrapper:
 ```
-cmake ./thirdparty/gtsam -DGTSAM_BUILD_PYTHON=1 -B build_gtsam 
-cmake --build build_gtsam --config RelWithDebInfo -j
+cmake ./thirdparty/gtsam/  -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12 -B build_gtsam
 cd build_gtsam
+make check (optional, runs unit tests)
+make install
 make python-install
 ```
 

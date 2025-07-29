@@ -1,0 +1,7 @@
+name: nerfslam_py310
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - cuda-toolkit
+prefix: /home/elyamani/miniconda3/envs/nerfslam_py310
